@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['build', '-t', 'gcr.io/cloud-builders/mywebsite', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/cloud-builders/mywebsite']
+- name: gcr.io/cloud-builders/gsutil
+  args: ["-m", "rsync", "-r", "-c", "-d", "./public", "gs://mistry.in"]
