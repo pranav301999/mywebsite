@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['build', '-t', 'gcr.io/cloud-builders/mywebsite', '.']
+  args: ['clone', 'https://github.com/pranav301999/mywebsite.git' '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/cloud-builders/mywebsite']
 - name: gcr.io/cloud-builders/gsutil
