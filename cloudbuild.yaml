@@ -1,7 +1,0 @@
-steps:
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['clone', 'https://github.com/pranav301999/mywebsite.git' '.']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/cloud-builders/mywebsite']
-- name: gcr.io/cloud-builders/gsutil
-  args: ["-m", "rsync", "-r", "-c", "-d", "./public", "gs://mistry.in"]
